@@ -48,8 +48,8 @@ function setup(){
 }
 
 function draw(){
-    dir.rotate(0.03);
-    cameraPlane.rotate(0.03);
+    dir.rotate(0.01);
+    cameraPlane.rotate(0.01);
 
     //limpa o canvas para o próximo frame
     background(190,190,255);

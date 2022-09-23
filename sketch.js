@@ -28,11 +28,7 @@ var knifeStand;
 let wallImages = [];
 
 function preload(){
-    wallImages = [
-      loadImage('Textures/Paredes/tile000.png'),
-      loadImage('Textures/Paredes/tile002.png')
-  
-    ]
+   
     knifeStand = loadAnimation('Textures/Attack/tile001.png');
     knifeAttack = loadAnimation('Textures/Attack/tile000.png','Textures/Attack/tile003.png');
 
@@ -50,9 +46,6 @@ function setup(){
     pos = createVector(5,5);
     dir = createVector(0,-1);
     cameraPlane = createVector(0.66,0); 
-   
-    
-    
 }
 
 
@@ -150,18 +143,5 @@ function draw(){
         line(pixel,lineStartY, pixel, lineEndY);    
     
 }
-<<<<<<< HEAD
-
-if(mouseIsPressed == true){
-  animation(gun1Attack, 260, 300);
-}
-else{
-  animation(gun1stand, 260, 300);
-  stop;
-}
-
 
 }
-=======
-}
->>>>>>> 56a398d2841e4e55ce16086f9c3b93092ac61dbb

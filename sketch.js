@@ -46,6 +46,8 @@ function setup(){
     pos = createVector(5,5);
     dir = createVector(0,-1);
     cameraPlane = createVector(0.66,0); 
+
+    
 }
 
 
@@ -142,6 +144,15 @@ function draw(){
         stroke(color,0,0);    
         line(pixel,lineStartY, pixel, lineEndY);    
     
+        
 }
+
+if(mouseIsPressed){
+  animation(knifeAttack,300,280);
+} 
+else{
+    animation(knifeStand,300,280);
+}
+
 
 }

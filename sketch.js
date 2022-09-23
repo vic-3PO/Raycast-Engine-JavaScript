@@ -57,8 +57,8 @@ function setup(){
 
 
 function draw(){
-    dir.rotate(0.03);
-    cameraPlane.rotate(0.03);
+    dir.rotate(0.01);
+    cameraPlane.rotate(0.01);
 
     //limpa o canvas para o próximo frame
     background(190,190,255);
@@ -150,6 +150,7 @@ function draw(){
         line(pixel,lineStartY, pixel, lineEndY);    
     
 }
+<<<<<<< HEAD
 
 if(mouseIsPressed == true){
   animation(gun1Attack, 260, 300);
@@ -161,3 +162,6 @@ else{
 
 
 }
+=======
+}
+>>>>>>> 56a398d2841e4e55ce16086f9c3b93092ac61dbb

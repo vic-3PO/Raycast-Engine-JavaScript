@@ -20,6 +20,8 @@ let pos;
 let dir;
 let cameraPlane;
 
+let splats;
+
 var knifeAttack;
 var knifeStand;
 
@@ -31,21 +33,28 @@ function preload(){
       loadImage('Textures/Paredes/tile002.png')
   
     ]
-    knifeStand = loadAnimation('Textures/Attack/tile004.png');
-    knifeAttack = loadAnimation('Textures/Attack/tile004.png','Textures/Attack/tile007.png',);
+    knifeStand = loadAnimation('Textures/Attack/tile001.png');
+    knifeAttack = loadAnimation('Textures/Attack/tile000.png','Textures/Attack/tile003.png');
 
+    gun1stand = loadAnimation('Textures/Attack/tile004.png')
+    gun1Attack = loadAnimation('Textures/Attack/tile004.png','Textures/Attack/tile007.png')
+    
 }
 
 function setup(){
-    createCanvas(gameWidth, gameHeight);
-    noStroke();
 
+    createCanvas(gameWidth, gameHeight);
+    
+    noStroke();
+    
     pos = createVector(5,5);
     dir = createVector(0,-1);
-    cameraPlane = createVector(0.66,0);
-  
-  
+    cameraPlane = createVector(0.66,0); 
+   
+    
+    
 }
+
 
 function draw(){
     dir.rotate(0.03);
@@ -138,17 +147,17 @@ function draw(){
         let color = hitSide ? 255 : 128;
         
         stroke(color,0,0);    
-        line(pixel,lineStartY, pixel, lineEndY);
-
-        
-
-    if(mouseIsPressed){
-        animation(knifeAttack, 260, 300);
-        stop;
-    }
-    else{
-        animation(knifeStand, 260, 300);
-        stop;
-    }
+        line(pixel,lineStartY, pixel, lineEndY);    
+    
 }
+
+if(mouseIsPressed == true){
+  animation(gun1Attack, 260, 300);
+}
+else{
+  animation(gun1stand, 260, 300);
+  stop;
+}
+
+
 }

@@ -156,13 +156,8 @@ mostraInimigo()
 movimentaInimigo()
 voltaPosicaoInicialDoinimigo()
 
-if(mouseIsPressed){
-  animation(gun1Attack,300,280);
-} 
-else{
-    animation(gun1stand,300,280);
+keyPressed()
 
-}
 
 
 }
@@ -195,4 +190,26 @@ function voltaPosicaoInicialDoinimigo(){
 
 function passouTodaATela(xinimigo){
   return xinimigo < - 50;
+}
+
+
+function keyPressed() {
+ 
+  if (keyCode === 49) {
+    if(mouseIsPressed){
+      animation(gun1Attack,300,280);
+    } 
+    else{
+        animation(gun1stand,300,280);
+    
+    }
+  } else if (keyCode === 50) {
+    if(mouseIsPressed){
+      animation(knifeAttack,300,280);
+    } 
+    else{
+        animation(knifeStand,300,280);
+    
+    }
+  }
 }

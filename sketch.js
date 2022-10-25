@@ -211,5 +211,12 @@ function keyPressed() {
         animation(knifeStand,300,280);
     
     }
+  } else{
+    if(mouseIsPressed){
+      animation(gun1Attack,300,280);
+    } 
+    else{
+        animation(gun1stand,300,280);
   }
+}
 }

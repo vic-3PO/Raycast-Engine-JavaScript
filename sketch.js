@@ -22,10 +22,11 @@ let cameraPlane;
 
 let splats;
 
-var knifeAttack;
+let knifeAttack;
 var knifeStand;
+var inimigo;
 
-let wallImages = [];
+let wallImages;
 
 function preload(){
    
@@ -34,7 +35,12 @@ function preload(){
 
     gun1stand = loadAnimation('Textures/Attack/tile004.png')
     gun1Attack = loadAnimation('Textures/Attack/tile004.png','Textures/Attack/tile007.png')
-    
+
+    wallImages= loadImage('Textures/Paredes/tile000.png')
+
+    inimigo = loadImage("sprite/0.png","sprite/3.png");
+
+    imageminimigo = [inimigo]
 }
 
 function setup(){
@@ -46,7 +52,6 @@ function setup(){
     pos = createVector(5,5);
     dir = createVector(0,-1);
     cameraPlane = createVector(0.66,0); 
-
     
 }
 
@@ -147,12 +152,47 @@ function draw(){
         
 }
 
+mostraInimigo()
+movimentaInimigo()
+voltaPosicaoInicialDoinimigo()
+
 if(mouseIsPressed){
-  animation(knifeAttack,300,280);
+  animation(gun1Attack,300,280);
 } 
 else{
-    animation(knifeStand,300,280);
+    animation(gun1stand,300,280);
+
 }
 
 
+}
+
+let xinimigo = [600];
+let yinimigo = [200];
+let velocidadeinimigo = [2];
+let comprimentoinimigo = 50;
+let alturainimigo = 50;
+
+function mostraInimigo(){
+  for (let i = 0; i < imageminimigo.length; i++){
+    image(imageminimigo[i], xinimigo[i], yinimigo[i], comprimentoinimigo, alturainimigo);
+  }
+}
+
+function movimentaInimigo(){
+  for (let i = 0; i < imageminimigo.length; i++){
+    xinimigo[i] -= velocidadeinimigo[i];
+  }
+}
+
+function voltaPosicaoInicialDoinimigo(){
+  for (let i = 0; i < imageminimigo.length; i++){
+    if (passouTodaATela(xinimigo[i])){
+      xinimigo[i] = 600;
+    }
+  }
+}
+
+function passouTodaATela(xinimigo){
+  return xinimigo < - 50;
 }

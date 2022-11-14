@@ -192,16 +192,14 @@ function passouTodaATela(xinimigo){
   return xinimigo < - 50;
 }
 
-
 function keyPressed() {
- 
+  //keyCode = 49;
   if (keyCode === 49) {
     if(mouseIsPressed){
       animation(gun1Attack,300,280);
     } 
     else{
         animation(gun1stand,300,280);
-    
     }
   } else if (keyCode === 50) {
     if(mouseIsPressed){
@@ -209,14 +207,6 @@ function keyPressed() {
     } 
     else{
         animation(knifeStand,300,280);
-    
     }
-  } else{
-    if(mouseIsPressed){
-      animation(gun1Attack,300,280);
-    } 
-    else{
-        animation(gun1stand,300,280);
-  }
-}
+  } 
 }
